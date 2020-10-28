@@ -360,6 +360,7 @@ Blockly.BlockDragger.prototype.maybeDeleteBlock_ = function() {
  */
 Blockly.BlockDragger.prototype.updateCursorDuringBlockDrag_ = function(isOutside) {
   this.wouldDeleteBlock_ = this.draggedConnectionManager_.wouldDeleteBlock();
+  console.log(this.wouldDeleteBlock_);
   var trashcan = this.workspace_.trashcan;
   if (this.wouldDeleteBlock_) {
     this.draggingBlock_.setDeleteStyle(true);

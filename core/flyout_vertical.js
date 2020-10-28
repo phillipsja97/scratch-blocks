@@ -739,7 +739,8 @@ Blockly.VerticalFlyout.prototype.getClientRect = function() {
   var BIG_NUM = 1000000000;
   var x = flyoutRect.left;
   var y = flyoutRect.top;
-  var width = flyoutRect.width;
+  // var width = flyoutRect.width;
+  var width = 0;  //HACK
   var height = flyoutRect.height;
 
   if (this.toolboxPosition_ == Blockly.TOOLBOX_AT_LEFT) {

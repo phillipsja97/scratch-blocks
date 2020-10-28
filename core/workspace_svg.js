@@ -1255,6 +1255,7 @@ Blockly.WorkspaceSvg.prototype.isInsideBlocksArea = function(e) {
  * @private
  */
 Blockly.WorkspaceSvg.prototype.onMouseDown_ = function(e) {
+  if (this.flyout_ && this.flyout_.isVisible()) this.flyout_.hide();
   var gesture = this.getGesture(e);
   if (gesture) {
     gesture.handleWsStart(e, this);
@@ -1983,6 +1984,7 @@ Blockly.WorkspaceSvg.getTopLevelWorkspaceMetrics_ = function() {
       Blockly.WorkspaceSvg.getDimensionsPx_(this.toolbox_);
   var flyoutDimensions =
       Blockly.WorkspaceSvg.getDimensionsPx_(this.flyout_);
+  toolboxDimensions.width = 60;
 
   // Contains height and width in CSS pixels.
   // svgSize is equivalent to the size of the injectionDiv at this point.
