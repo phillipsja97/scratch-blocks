@@ -20,7 +20,7 @@
 
 'use strict';
 
-goog.provide('Blockly.Blocks.microworld');
+goog.provide('Blockly.Blocks.virtualSat');
 
 goog.require('Blockly.Blocks');
 goog.require('Blockly.Colours');
@@ -46,10 +46,10 @@ Blockly.Blocks['event_whenstarted'] = {
   }
 };
 
-Blockly.Blocks['looks_forwardpixel'] = {
+Blockly.Blocks['virtualsat_startsequence'] = {
   init: function() {
     this.jsonInit({
-      "message0": "forward %1",
+      "message0": "Start Sequence By FileName %1",
       "args0": [
         {
           "type": "input_value",
@@ -62,10 +62,10 @@ Blockly.Blocks['looks_forwardpixel'] = {
   }
 };
 
-Blockly.Blocks['looks_backpixel'] = {
+Blockly.Blocks['virtualsat_sendTouch'] = {
   init: function() {
     this.jsonInit({
-      "message0": "back %1",
+      "message0": "Send Touch Message %1",
       "args0": [
         {
           "type": "input_value",
@@ -78,92 +78,104 @@ Blockly.Blocks['looks_backpixel'] = {
   }
 };
 
-Blockly.Blocks['looks_nextpixel'] = {
+Blockly.Blocks['virtualsat_sendMessage'] = {
   init: function() {
     this.jsonInit({
-      "message0": "next pixel",
-      "category": Blockly.Categories.looks,
-      "extensions": ["colours_looks", "shape_statement"]
-    });
-  }
-};
-
-Blockly.Blocks['looks_displaypixel'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "display the pixel",
-      "category": Blockly.Categories.looks,
-      "extensions": ["colours_looks", "shape_statement"]
-    });
-  }
-};
-
-Blockly.Blocks['looks_previouspixel'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "previous pixel",
-      "category": Blockly.Categories.looks,
-      "extensions": ["colours_looks", "shape_statement"]
-    });
-  }
-};
-
-Blockly.Blocks['looks_changecolor'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "change color by %1",
+      "message0": "Send Message %1 to Satellite %2",
       "args0": [
         {
           "type": "input_value",
           "name": "VALUE"
+        },
+        {
+          "type": "input_value",
+          "name": "SATELLITE"
         }
       ],
-      "category": Blockly.Categories.looks,
+      "category": Blockly.Categories.event,
       "extensions": ["colours_looks", "shape_statement"]
     });
   }
 };
 
-Blockly.Blocks['looks_setcolor'] = {
+Blockly.Blocks['virtualsat_stopEvent'] = {
   init: function() {
     this.jsonInit({
-      "message0": "set color to %1",
+      "message0": "%1 on Satellite %2",
       "args0": [
         {
           "type": "input_value",
           "name": "VALUE"
+        },
+        {
+          "type": "input_value",
+          "name": "SATELLITE"
         }
       ],
-      "category": Blockly.Categories.looks,
+      "category": Blockly.Categories.event,
       "extensions": ["colours_looks", "shape_statement"]
     });
   }
 };
 
-Blockly.Blocks['control_waitms'] = {
+Blockly.Blocks['virtualsat_waitUntilSatOne'] = {
   init: function() {
     this.jsonInit({
-      "message0": "wait %1 milliseconds",
-      "args0": [
-        {
-          "type": "input_value",
-          "name": "VALUE"
-        }
-      ],
-      "category": Blockly.Categories.control,
-      "extensions": ["colours_control", "shape_statement"]
+      "message0": "Wait until Satellite One button is pressed",
+      "category": Blockly.Categories.event,
+      "extensions": ["colours_control", "shape_hat"]
     });
   }
 };
 
-Blockly.Blocks['looks_setallcolors'] = {
+Blockly.Blocks['virtualsat_waitUntilSatTwo'] = {
   init: function() {
     this.jsonInit({
-      "message0": "set all pixels to color %1",
+      "message0": "Wait until Satellite Two button is pressed",
+      "category": Blockly.Categories.event,
+      "extensions": ["colours_control", "shape_hat"]
+    });
+  }
+};
+
+Blockly.Blocks['virtualsat_waitUntilSatThree'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "Wait until Satellite Three button is pressed",
+      "category": Blockly.Categories.event,
+      "extensions": ["colours_control", "shape_hat"]
+    });
+  }
+};
+
+Blockly.Blocks['virtualsat_waitUntilSatFour'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "Wait until Satellite Four button is pressed",
+      "category": Blockly.Categories.event,
+      "extensions": ["colours_control", "shape_hat"]
+    });
+  }
+};
+
+Blockly.Blocks['virtualsat_waitUntilSatTouched'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "Wait until Satellite is Touched",
+      "category": Blockly.Categories.event,
+      "extensions": ["colours_control", "shape_hat"]
+    });
+  }
+};
+
+Blockly.Blocks['virtualsat_playSound'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "Play Sound %1",
       "args0": [
         {
           "type": "input_value",
-          "name": "VALUE"
+          "name": "SOUND"
         }
       ],
       "category": Blockly.Categories.looks,
