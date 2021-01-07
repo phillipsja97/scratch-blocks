@@ -170,6 +170,7 @@ Blockly.Toolbox.prototype.createFlyout_ = function() {
   } else {
     this.flyout_ = new Blockly.VerticalFlyout(options);
   }
+  workspace.flyout_ = this.flyout_;
   this.flyout_.setParentToolbox(this);
 
   goog.dom.insertSiblingAfter(
